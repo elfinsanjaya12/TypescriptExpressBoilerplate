@@ -6,4 +6,4 @@ const UserSchema: Schema = new Schema({
   updatedAt: Date,
 });
 
-export default model('User', UserSchema);
+export default model('Users', UserSchema);
