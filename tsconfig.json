@@ -7,6 +7,7 @@
     "strict": true,
     // "pretty": true,
     // "sourceMap": true,
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "outDir": "./build",
     "baseUrl": "./src",

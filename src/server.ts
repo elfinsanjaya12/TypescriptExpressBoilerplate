@@ -12,6 +12,10 @@ import mongoose = require('mongoose');
 // import routers
 import UserRouterExample from './routers/UserRouterExample';
 
+// import docs swagger
+import swaggerUiExpress from 'swagger-ui-express';
+import * as swaggerDocument from './docs/swagger.json';
+
 class App {
   public app: Application;
 
@@ -34,6 +38,11 @@ class App {
 
   protected routes(): void {
     // endpoint method get
+    this.app.use(
+      '/docs-api',
+      swaggerUiExpress.serve,
+      swaggerUiExpress.setup(swaggerDocument)
+    );
     this.app.use('/api/v1/users', UserRouterExample);
   }
   // connection database mongodb

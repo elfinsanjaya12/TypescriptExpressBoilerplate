@@ -11,6 +11,23 @@
             true,
             "single"
         ],
+        "semicolon": [
+            true,
+            "always",
+            "strict-bound-class-methods"
+        ],
+        "trailing-comma": [
+            true,
+            {
+                "multiline": {
+                    "objects": "always",
+                    "arrays": "always",
+                    "functions": "never",
+                    "typeLiterals": "ignore"
+                },
+                "esSpecCompliant": true
+            }
+        ],
         "ordered-imports": [
             false
         ],
