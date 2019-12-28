@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "allowJs": true,
+    "module": "commonjs",
+    // "moduleResolution": "node",
+    "strict": true,
+    // "pretty": true,
+    // "sourceMap": true,
+    "esModuleInterop": true,
+    "outDir": "./build",
+    "baseUrl": "./src",
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

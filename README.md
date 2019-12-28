@@ -1,0 +1,1 @@
+# Boilerplate Typescript Express + MongoDB + Swagger + Redis + Testing TDD + Travis CI + TSLint + Prettier + Airbnb + Husky
