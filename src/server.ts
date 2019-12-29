@@ -1,4 +1,4 @@
-import express, { Application } from 'express';
+import express, { Application, Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import compression from 'compression';
@@ -43,6 +43,9 @@ class App {
       swaggerUiExpress.serve,
       swaggerUiExpress.setup(swaggerDocument)
     );
+    this.app.use('/', (req: Request, res: Response) => {
+      return res.status(200).json({ massage: "Welcome Api Boilerplate Typescript Express" })
+    });
     this.app.use('/api/v1/users', UserRouterExample);
   }
   // connection database mongodb
