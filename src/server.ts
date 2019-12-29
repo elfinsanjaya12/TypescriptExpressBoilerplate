@@ -47,7 +47,7 @@ class App {
   }
   // connection database mongodb
   private mongoSetup(): void {
-    const MONGO_URI: any = process.env.DB_LOCAL;
+    const MONGO_URI: any = process.env.DB_CONNECTION;
     mongoose.set('useCreateIndex', true);
     mongoose.connect(MONGO_URI, {
       useNewUrlParser: true,
