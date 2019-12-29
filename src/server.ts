@@ -60,7 +60,7 @@ class App {
 }
 
 const app = new App().app;
-app.listen(process.env.PORT || 8000, () => {
+app.listen(process.env.PORT || 3000, () => {
   // tslint:disable-next-line: no-console
-  console.log(`Server Running di port ${process.env.PORT || 8000}`);
+  console.log(`Server Running di port ${process.env.PORT || 3000}`);
 });
