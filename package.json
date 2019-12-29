@@ -5,7 +5,8 @@
   "author": "Elfin Sanjaya <elfinsanjaya1207@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build-ts": "tsc",
+    "postinstall": "npm run build-ts",
     "ts": "tsc -w",
     "tslint": "tslint --project tsconfig.json",
     "prettier:base": "prettier --parser typescript --single-quote",
