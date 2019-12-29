@@ -7,14 +7,14 @@ import cors from 'cors';
 import { config as dotenv } from 'dotenv';
 
 // import mongoose
-// import mongoose = require('mongoose');
+import mongoose = require('mongoose');
 
 // import routers
-// import UserRouterExample from './routers/UserRouterExample';
+import UserRouterExample from './routers/UserRouterExample';
 
 // import docs swagger
-// import swaggerUiExpress from 'swagger-ui-express';
-// import * as swaggerDocument from './docs/swagger.json';
+import swaggerUiExpress from 'swagger-ui-express';
+import * as swaggerDocument from './docs/swagger.json';
 
 class App {
   public app: Application;
@@ -22,7 +22,7 @@ class App {
   constructor() {
     this.app = express();
     dotenv();
-    // this.mongoSetup();
+    this.mongoSetup();
     this.plugins();
     this.routes();
   }
@@ -38,28 +38,25 @@ class App {
 
   protected routes(): void {
     // endpoint method get
-    // this.app.use(
-    //   '/docs-api',
-    //   swaggerUiExpress.serve,
-    //   swaggerUiExpress.setup(swaggerDocument)
-    // );
-    this.app.route("/").get((req: Request, res: Response) => {
-      return res.status(200).json({ massage: "Welcome Api Boilerplate Typescript Express By Elfin Sanjaya" })
-    })
-    // this.app.use('/', (req: Request, res: Response) => {
-    //   return res.status(200).json({ massage: "Welcome Api Boilerplate Typescript Express" })
-    // });
-    // this.app.use('/api/v1/users', UserRouterExample);
+    this.app.use(
+      '/docs-api',
+      swaggerUiExpress.serve,
+      swaggerUiExpress.setup(swaggerDocument)
+    );
+    this.app.use('/', (req: Request, res: Response) => {
+      return res.status(200).json({ massage: "Welcome Api Boilerplate Typescript Express" })
+    });
+    this.app.use('/api/v1/users', UserRouterExample);
   }
   // connection database mongodb
-  // private mongoSetup(): void {
-  //   const MONGO_URI: any = process.env.DB_CONNECTION;
-  //   mongoose.set('useCreateIndex', true);
-  //   mongoose.connect(MONGO_URI || 'mongodb+srv://elfinsanjaya:Copyright12@cluster0-vnlpo.gcp.mongodb.net/db_text?retryWrites=true&w=majority', {
-  //     useNewUrlParser: true,
-  //     useUnifiedTopology: true,
-  //   });
-  // }
+  private mongoSetup(): void {
+    const MONGO_URI: any = process.env.DB_CONNECTION;
+    mongoose.set('useCreateIndex', true);
+    mongoose.connect(MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+  }
 }
 
 const app = new App().app;
