@@ -52,7 +52,7 @@ class App {
   private mongoSetup(): void {
     const MONGO_URI: any = process.env.DB_CONNECTION;
     mongoose.set('useCreateIndex', true);
-    mongoose.connect(MONGO_URI, {
+    mongoose.connect(MONGO_URI || 'mongodb+srv://elfinsanjaya:Copyright12@cluster0-vnlpo.gcp.mongodb.net/db_text?retryWrites=true&w=majority', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -60,7 +60,7 @@ class App {
 }
 
 const app = new App().app;
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 8000, () => {
   // tslint:disable-next-line: no-console
-  console.log(`Server Running di port ${process.env.PORT}`);
+  console.log(`Server Running di port ${process.env.PORT || 8000}`);
 });

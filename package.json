@@ -14,7 +14,7 @@
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
     "coverage": "nyc -r text -e .ts -x \"tests/*.test.ts\" npm run test",
     "dev": "SET NODE_ENV=production && nodemon ./build/server.js",
-    "start": "node ./build/server.js"
+    "start": "node build/server.js"
   },
   "husky": {
     "hooks": {
