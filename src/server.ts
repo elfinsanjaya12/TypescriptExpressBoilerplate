@@ -43,7 +43,7 @@ class App {
     //   swaggerUiExpress.serve,
     //   swaggerUiExpress.setup(swaggerDocument)
     // );
-    this.app.use('/', (req: Request, res: Response) => {
+    this.app.get('/', (req: Request, res: Response) => {
       return res.status(200).json({ massage: "Welcome Api Boilerplate Typescript Express" })
     });
     // this.app.use('/api/v1/users', UserRouterExample);
