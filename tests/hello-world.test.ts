@@ -4,6 +4,6 @@ import { hello } from '../hello-world';
 describe('Hello function', () => {
   it('should return hello world', () => {
     const result = hello();
-    expect(result).to.equal('Hello world!');
+    expect(result).to.equal('Add Configuration Travis CI');
   });
 });
