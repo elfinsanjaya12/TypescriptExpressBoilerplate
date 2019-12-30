@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import redis from "redis";
-const client = redis.createClient();
+const client = redis.createClient('https://127.0.0.1:6379');
 
 export default new class Redis {
   public cached = (req: Request, res: Response, next: NextFunction) => {
