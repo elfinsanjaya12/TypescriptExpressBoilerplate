@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import redis from "redis";
 const client = redis.createClient();
-
 export default new class Redis {
   public cached = (req: Request, res: Response, next: NextFunction) => {
     let redis_key: any = req.headers.redis_key
