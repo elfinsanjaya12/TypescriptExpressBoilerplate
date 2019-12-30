@@ -1,11 +1,11 @@
 import BaseRouterExample from './BaseRouterExample';
-
+import Redis from "../middlewares/redis";
 // import controller
 import UserControllerExample from '../controllers/UserControllerExample';
 
 class UserRouterExample extends BaseRouterExample {
   public routes(): void {
-    this.router.get('/', UserControllerExample.getAllUsers);
+    this.router.get('/', Redis.cached, UserControllerExample.getAllUsers);
     this.router.post('/', UserControllerExample.createUsers);
   }
 }

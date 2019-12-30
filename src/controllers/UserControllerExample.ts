@@ -1,11 +1,12 @@
 import { Request, Response } from 'express';
 import UserModelExample from '../models/UserModelExample';
+import Redis from "../middlewares/redis";
 
 class UserControllerExample {
   // read all data users
   public getAllUsers = (req: Request, res: Response) => {
-    console.log("jalan");
     UserModelExample.find().then(users => {
+      Redis.caching('Users', users);
       res.status(200).json({ message: 'Success Read All Users', data: users });
     });
   };
