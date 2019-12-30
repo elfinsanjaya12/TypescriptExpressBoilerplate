@@ -4,6 +4,7 @@ import UserModelExample from '../models/UserModelExample';
 class UserControllerExample {
   // read all data users
   public getAllUsers = (req: Request, res: Response) => {
+    console.log("jalan");
     UserModelExample.find().then(users => {
       res.status(200).json({ message: 'Success Read All Users', data: users });
     });
