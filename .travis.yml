@@ -11,5 +11,4 @@ addons:
     - redis-tools
 services:
   - redis-server
-  
 script: echo PING | nc localhost 6379
