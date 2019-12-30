@@ -45,7 +45,7 @@ class App {
     );
     this.app.get('/', (req: Request, res: Response) => {
       return res.status(200).json({
-        massage: "Welcome Api Boilerplate Typescript Express",
+        message: "Welcome Api Boilerplate Typescript Express",
         doscapi: "/dosc-api"
       })
     });
@@ -67,3 +67,5 @@ app.listen(process.env.PORT || 3000, () => {
   // tslint:disable-next-line: no-console
   console.log(`Server Running di port ${process.env.PORT || 3000}`);
 });
+
+export default new App().app;
